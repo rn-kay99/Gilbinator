@@ -1,0 +1,48 @@
+<div class="container controls">
+    <div class="row">
+        <div class="col " id="graph-start-algo">
+            <div class="controls__start-button">
+                <div class="controls__start-button-text">Starte Gilbinator</div>
+                <img src="images/play-arrow.svg" height="30px"></img>
+            </div>
+        </div>
+
+        <div class="col hide-button" id="graph-replay-algo">
+            <div class="controls__start-button">
+                <div class="controls__start-button-text">Zurücksetzen</div>
+                <img src="images/replay.svg" height="30px"></img>
+            </div>
+        </div>
+
+        <div class="col s12 controls__section">
+            <div class="controls__section-text">Generiere einen neuen Graph:</div>
+            <div class="controls__level-buttons">
+                <div class="controls__level-button" id="graph-easy-button">Leicht</div>
+                <div class="controls__level-button" id="graph-medium-button">Mittel</div>
+                <div class="controls__level-button" id="graph-hard-button">Schwer</div>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <span id="maximum-matches-display" class="controls__items">X</span>
+            <span class="controls__items">Matches gefunden!</span>
+        </div>
+    </div>
+</div>
+
+<div class="container row controls-headlines">
+    <div class="col s6">
+        <div class="headline__students">
+            Studenten
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="headline__grannies">
+            Grannies
+        </div>
+    </div>
+</div>
+
+<div class="container graph-container">
+    <svg width="960" id="gilbinator-graph"></svg>
+</div>

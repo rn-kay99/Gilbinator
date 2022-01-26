@@ -1,0 +1,28 @@
+.header{
+    padding: 10px 0;
+}
+
+.header__flexbox{
+    display: flex;
+    align-items: center;
+}
+
+.header__title{
+    margin-left: 20px;
+    font-size: 28px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: white;
+}
+
+.header__play-arrow{
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.header__play-arrow:hover{
+    background-color: #1976d2;
+}
+
+.hide-button{
+    display: none;
+}
