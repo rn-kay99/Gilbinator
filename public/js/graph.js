@@ -1,4 +1,4 @@
-import { getRandomString, generateGraphData, generateGrannyImage } from "./graph-data-generator.js";
+import { getRandomString, generateGraphData, generateGrannyImage, getHeight } from "./graph-data-generator.js";
 // ------------------ GLOBAL VARIABLES ------------------
 
 let studentColor = "#1976d2"; // default student color
@@ -30,9 +30,8 @@ function getGraphData() {
 
 // ------------------ BUILDING GRAPH ------------------
 
-function initGraph(svgHeight) {
+function initGraph() {
     width = svg.attr("width");
-    height = svg.attr("height", svgHeight);
 
     simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(function (d) { return d.id; }))
@@ -40,9 +39,16 @@ function initGraph(svgHeight) {
         .force("center", d3.forceCenter(width / 2, height / 2));
 }
 
+function setSvgHeight(){
+    svg.attr("height", getHeight());
+}
+
 function generateGraph(selectedlevel) {
     // generate new data
     graphData = generateGraphData(selectedlevel);
+
+    // set svg height depending on how many nodes
+    setSvgHeight();
 
     // delete old graph
     deleteGraph();

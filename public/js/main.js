@@ -1,14 +1,11 @@
-import { initGraph, generateGraph, resetGraph, deactiveGraphClick, highlightLinks, getGraphData, setStudentColor, setGrannyColor } from "./graph.js";
-import { getRandomString, getRandomNumber } from "./helper.js";
+import { initGraph, generateGraph, resetGraph, deactiveGraphClick, highlightLinks, getGraphData } from "./graph.js";
+import { getRandomString } from "./helper.js";
 
 // svg attributes
-let svg = d3.select("#gilbinator-graph");
-let easySvgHeight = 650;
-let mediumSvgHeight = 900;
-let hardSvgHeight = 1250;
 let easyLevel = 0;
 let mediumLevel = 2;
 let hardLevel = 5;
+let selectedlevel;
 
 // init buttons
 let easyButton = document.getElementById("graph-easy-button");
@@ -17,14 +14,14 @@ let hardButton = document.getElementById("graph-hard-button");
 let startAlgoButton = document.getElementById("graph-start-algo");
 let replayAlgoButton = document.getElementById("graph-replay-algo");
 
-easyButton.addEventListener("click", createEasyGraph);
-mediumButton.addEventListener("click", createMediumGraph);
-hardButton.addEventListener("click", createHardGraph);
+easyButton.addEventListener("click", () => {selectedlevel = easyLevel; createLevelGraph(); });
+mediumButton.addEventListener("click", () => {selectedlevel = mediumLevel; createLevelGraph(); });
+hardButton.addEventListener("click", () => {selectedlevel = hardLevel; createLevelGraph(); });
 startAlgoButton.addEventListener("click", startAlgo);
 replayAlgoButton.addEventListener("click", replayAlgo);
 
 // add graph
-initGraph(easySvgHeight);
+initGraph();
 generateGraph();
 let graphData = getGraphData();
 let matching = solveBipartiteMatching(graphData);
@@ -39,41 +36,18 @@ function startAlgo() {
     highlightLinks(matching);
 }
 
-function replayAlgo(){
+function replayAlgo() {
     switchStartButton();
     resetGraph();
 }
 
-function createEasyGraph() {
-    svg.attr("height", easySvgHeight);
+function createLevelGraph() {
     // reset start button
     startAlgoButton.classList.remove("hide-button");
     replayAlgoButton.classList.add("hide-button");
 
     //generate new graph
-    generateGraph(easyLevel);
-    graphData = getGraphData();
-    matching = solveBipartiteMatching(graphData);
-}
-
-function createMediumGraph() {
-    svg.attr("height", mediumSvgHeight);
-    // reset start button
-    startAlgoButton.classList.remove("hide-button");
-    replayAlgoButton.classList.add("hide-button");
-
-    generateGraph(mediumLevel);
-    graphData = getGraphData();
-    matching = solveBipartiteMatching(graphData);
-}
-
-function createHardGraph() {
-    svg.attr("height", hardSvgHeight);
-    // reset start button
-    startAlgoButton.classList.remove("hide-button");
-    replayAlgoButton.classList.add("hide-button");
-
-    generateGraph(hardLevel);
+    generateGraph(selectedlevel);
     graphData = getGraphData();
     matching = solveBipartiteMatching(graphData);
 }
@@ -106,15 +80,15 @@ function solveBipartiteMatching(data) {
     return edges;
 }
 
-function getMatchingEdges(graphData, startId, endId){
+function getMatchingEdges(graphData, startId, endId) {
     let links = graphData.links;
     let result = [];
 
-    for(let i = 0; i < links.length; i++){
-        if(links[i].source == startId || links[i].target == endId){
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].source == startId || links[i].target == endId) {
             continue;
         }
-        if(links[i].type == "default" && links[i].capacity == 0){
+        if (links[i].type == "default" && links[i].capacity == 0) {
             result.push(links[i]);
         }
     }
@@ -232,7 +206,7 @@ function findPathFromStartToEnd(graphData, startId, endId) {
             }
         }
 
-        if(currentNodeId == null){
+        if (currentNodeId == null) {
             stack.pop();
         }
     }
