@@ -17,8 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Own css files --}}
-    <link rel="Stylesheet" href="css/header.css">
     <link rel="Stylesheet" href="css/basic.css">
+    <link rel="Stylesheet" href="css/header.css">
+    <link rel="Stylesheet" href="css/footer.css">
     <link rel="Stylesheet" href="css/main.css">
     <link rel="Stylesheet" href="css/graph.css">
 
@@ -31,6 +32,7 @@
 <body>
     {{> _header}}
     {{{body}}}
+    {{> _footer}}
 
     {{!-- JavaScript at end of body for optimized loading --}}
     <script type="text/javascript" src="js/materialize.min.js"></script>

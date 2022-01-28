@@ -5,18 +5,21 @@ import { getRandomString } from "./helper.js";
 let easyLevel = 0;
 let mediumLevel = 2;
 let hardLevel = 5;
+let ultraLevel = 8;
 let selectedlevel;
 
 // init buttons
 let easyButton = document.getElementById("graph-easy-button");
 let mediumButton = document.getElementById("graph-medium-button");
 let hardButton = document.getElementById("graph-hard-button");
+let ultraButton = document.getElementById("graph-ultra-button");
 let startAlgoButton = document.getElementById("graph-start-algo");
 let replayAlgoButton = document.getElementById("graph-replay-algo");
 
 easyButton.addEventListener("click", () => {selectedlevel = easyLevel; createLevelGraph(); });
 mediumButton.addEventListener("click", () => {selectedlevel = mediumLevel; createLevelGraph(); });
 hardButton.addEventListener("click", () => {selectedlevel = hardLevel; createLevelGraph(); });
+ultraButton.addEventListener("click", () => {selectedlevel = ultraLevel; createLevelGraph(); });
 startAlgoButton.addEventListener("click", startAlgo);
 replayAlgoButton.addEventListener("click", replayAlgo);
 
@@ -44,7 +47,9 @@ function replayAlgo() {
 function createLevelGraph() {
     // reset start button
     startAlgoButton.classList.remove("hide-button");
+    startAlgoButton.classList.add("controls__start-button");
     replayAlgoButton.classList.add("hide-button");
+    replayAlgoButton.classList.remove("controls__start-button");
 
     //generate new graph
     generateGraph(selectedlevel);
@@ -54,7 +59,9 @@ function createLevelGraph() {
 
 function switchStartButton() {
     startAlgoButton.classList.toggle("hide-button");
+    startAlgoButton.classList.toggle("controls__start-button");
     replayAlgoButton.classList.toggle("hide-button");
+    replayAlgoButton.classList.toggle("controls__start-button");
 }
 
 function solveBipartiteMatching(data) {

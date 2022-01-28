@@ -1,28 +1,76 @@
+<div class="container present-block">
+    <div>
+        <div class="present-block__headline">Gilb Algorithmus 🪄</div>
+        <div class="present-block__sub-headline">aka Ford-Fulkerson</div>
+    </div>
+</div>
 <div class="container controls">
     <div class="row">
-        <div class="col " id="graph-start-algo">
-            <div class="controls__start-button">
-                <div class="controls__start-button-text">Starte Gilbinator</div>
-                <img src="images/play-arrow.svg" height="30px"></img>
+        <div class="col s12 controls__section-text">
+            <div>
+                Der Algorithmus berechnet das maximale Matching!
+            </div>
+            <div>
+                Wähle eine Schwierigkeit um dafür einen zufälligen Graphen zu generieren.
             </div>
         </div>
 
-        <div class="col hide-button" id="graph-replay-algo">
-            <div class="controls__start-button">
+    </div>
+    <div class="row ">
+        <div class="col s3">
+            <div class="controls__start-button" id="graph-start-algo">
+                <div class="controls__start-button-text">Starte Gilbinator</div>
+                <img src="images/play-arrow.svg" height="30px"></img>
+            </div>
+
+            <div class="hide-button" id="graph-replay-algo">
                 <div class="controls__start-button-text">Zurücksetzen</div>
                 <img src="images/replay.svg" height="30px"></img>
             </div>
         </div>
-
-        <div class="col s12 controls__section">
-            <div class="controls__section-text">Generiere einen zufälligen Graph:</div>
-            <div class="controls__level-buttons">
-                <div class="controls__level-button" id="graph-easy-button">Leicht</div>
-                <div class="controls__level-button" id="graph-medium-button">Mittel</div>
-                <div class="controls__level-button" id="graph-hard-button">Schwer</div>
+    </div>
+    <div class="row controls__section">
+        <div class="col s3">
+            <div class="controls__level-button" id="graph-easy-button">
+                Leicht
+                <div class="controls__level-stars">
+                    <img src="images/star.png" height="25px"></img>
+                </div>
             </div>
         </div>
+        <div class="col s3">
+            <div class="controls__level-button" id="graph-medium-button">
+                Mittel
+                <div class="controls__level-stars">
+                    <img src="images/star.png" height="25px"></img>
+                    <img src="images/star.png" height="25px"></img>
+                </div>
+            </div>
+        </div>
+        <div class="col s3">
+            <div class="controls__level-button" id="graph-hard-button">
+                Schwer
+                <div class="controls__level-stars">
+                    <img src="images/star.png" height="25px"></img>
+                    <img src="images/star.png" height="25px"></img>
+                    <img src="images/star.png" height="25px"></img>
+                </div>
+            </div>
+        </div>
+        <div class="col s3">
+            <div class="controls__level-button" id="graph-ultra-button">
+                Ultra
+                <div class="controls__level-stars">
+                    <img src="images/star.png" height="25px"></img>
+                    <img src="images/star.png" height="25px"></img>
+                    <img src="images/star.png" height="25px"></img>
+                    <img src="images/star.png" height="25px"></img>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
         <div class="col s12">
             <span id="maximum-matches-display" class="controls__items">X</span>
             <span class="controls__items">Matches gefunden!</span>

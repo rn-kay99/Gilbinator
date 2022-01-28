@@ -1,0 +1,10 @@
+.footer{
+    display: flex;
+    text-align: end;
+    margin-top: 80px;
+    padding: 40px 0;
+}
+
+.footer__text{
+    color: white;
+}

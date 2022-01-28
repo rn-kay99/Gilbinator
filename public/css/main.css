@@ -1,14 +1,26 @@
-.pre-info-block{
-    border: 2px solid #bdbdbd;
-    padding: 10px;
-    margin-top: 80px;
-    color: #bdbdbd;
-    font-size: 40px;
-    text-align: center;
+.present-block{
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid;
+    padding: 20px 0;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    background-color: #c51162;
+    color: white;
+}
+
+.present-block__headline{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 30px;
+}
+
+.present-block__sub-headline{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 18px;
 }
 
 .controls{
-    padding: 40px 0 0 0;
+    padding: 15px 0 15px 0;
 }
 
 .controls__section{
@@ -16,7 +28,9 @@
 }
 
 .controls__section-text{
-    margin-bottom: 8px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .controls__items{
@@ -35,12 +49,9 @@
 .controls__start-button{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background-color: #eeeeee ;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid black;
-    /* color: white; */
+    justify-content: space-between;
+    background-color: #e0e0e0 ;
+    padding: 20px;
     cursor: pointer;
 }
 
@@ -58,12 +69,16 @@
 }
 
 .controls__level-button{
-    background-color: #eeeeee ;
-    padding: 8px 15px;
-    border-radius: 10px;
-    border: 2px solid black;
-    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0e0e0 ;
+    padding: 20px;
     cursor: pointer;
+}
+
+.controls__level-stars{
+    display: flex;
 }
 
 .controls__level-button:hover{
