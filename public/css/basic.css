@@ -1,1 +1,7 @@
-.material-icons.md-70 { font-size: 70px; }
+.material-icons.md-70 { 
+    font-size: 70px; 
+}
+
+.hide-button{
+    display: none;
+}
