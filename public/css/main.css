@@ -81,6 +81,10 @@
     display: flex;
 }
 
+.controls__level-star{
+    height: 25px;
+}
+
 .controls__level-button:hover{
     background-color: #1976d2;
     color: white;
@@ -107,3 +111,10 @@
     background-color: #c51162;
     padding: 15px 0;
 }
+
+
+@media only screen and (max-width: 1150px) {
+    .controls__level-star{
+        height: 18px;
+    }
+  }

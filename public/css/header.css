@@ -40,10 +40,12 @@
     flex-direction: column;
     align-items: center;
     opacity: 0.5;
+    white-space: nowrap;
 }
 
 .header__mood-title{
     position: absolute;
+    text-align: center;
     font-size: 35px;
     font-family: 'Mochiy Pop P One', sans-serif;
     text-transform: uppercase;
