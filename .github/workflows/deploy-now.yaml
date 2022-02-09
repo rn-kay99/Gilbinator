@@ -30,10 +30,10 @@ jobs:
         run: npm install
       - name: Build project
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
-        run: npm run start
+        run: npm run test
         env:
-          SITE_URL: ${{ steps.project.outputs.site-url }}
           CI: true
+          SITE_URL: ${{ steps.project.outputs.site-url }}
       - name: Deploy build
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
         uses: ionos-deploy-now/deploy-to-ionos-action@v1
