@@ -12,11 +12,13 @@
 .present-block__headline{
     font-family: 'Mochiy Pop P One', sans-serif;
     font-size: 30px;
+    text-align: center;
 }
 
 .present-block__sub-headline{
     font-family: 'Mochiy Pop P One', sans-serif;
     font-size: 18px;
+    text-align: center;
 }
 
 .controls{

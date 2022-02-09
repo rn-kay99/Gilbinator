@@ -1,4 +1,4 @@
-import { getRandomString, getRandomNumber } from "./helper.js";
+import { getRandomString, getRandomNumber, getRandomName } from "./helper.js";
 // ------------------ CREATE RANDOM GRAPH DATA ------------------
 
 let minNodes = 2;
@@ -25,7 +25,7 @@ function getWidth() {
     return width;
 }
 
-function getHeight(){
+function getHeight() {
     let studentHeight = 2 * topPadding + (studentSize - 1) * paddingBetweenNodes;
     let grannyHeight = 2 * topPadding + (grannySize - 1) * paddingBetweenNodes;
 
@@ -45,6 +45,8 @@ function generateNodeObject(level = 0) {
     let grannyNodes = [];
     studentSize = (getRandomNumber(minNodes, maxNodes) + level);
     grannySize = (getRandomNumber(minNodes, maxNodes) + level);
+    let randomProfile = getRandomName().then(data => { return data });
+    console.log(randomProfile.then(data => console.log(data)));
 
     for (let i = 0; i < studentSize; i++) {
         studentNodes[i] = { "id": "s-" + getRandomString(6), "group": 'student', 'cx': 0 + padding, 'cy': topPadding + paddingBetweenNodes * i, activeNeighbors: 0 };
@@ -67,7 +69,7 @@ function generateLinkObject(nodes) {
         let studentId = studentNodes[i].id;
 
         for (let j = 0; j < grannySize; j++) {
-            let connected = getRandomNumber(0, 1);
+            let connected = getRandomNumber(0, 3);
             let grannyId = grannyNodes[j].id;
             if (connected == 1) {
                 links[linksNumber] = { "id": "l-" + getRandomString(10), "source": studentId, "target": grannyId, "active": -1, "fault": 0 };

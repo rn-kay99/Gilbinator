@@ -15,4 +15,26 @@ function getRandomString(length) {
     return result;
 }
 
-export { getRandomString, getRandomNumber };
+function getRandomProfile() {
+    fetch("https://randomuser.me/api/?nat=de")
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            return data.results;
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
+
+async function getRandomName(){
+    let randomProfile = await getRandomProfile();
+
+    return randomProfile;
+}
+
+
+// console.log(getRandomName());
+
+export { getRandomString, getRandomNumber, getRandomName };
