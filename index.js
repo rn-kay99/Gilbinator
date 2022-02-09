@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
+const port = process.env.PORT || 3000;
 
 let hbs = exphbs.create({ extname: ".hbs" });
 
@@ -18,4 +19,4 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.listen(3000)
+app.listen(port)
