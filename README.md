@@ -23,3 +23,10 @@ Um Gilbinator zu verwenden, führe die folgenden Schritte aus:
 ## Ford-Fulkerson Algorithmus
 
 Der Ford-Fulkerson Algorithmus ist ein Graphenalgorithmus zur Lösung des maximalen Flussproblems in einem Netzwerk. In unserem Fall wird er verwendet, um das Maximum Matching Problem in einem bipartiten Graphen zu lösen. Der Algorithmus erhöht iterativ den Fluss über augmentierende Pfade im Netzwerk, indem er rückwärts gerichtete Kanten mit Restkapazität findet. Dieser Prozess wird wiederholt, bis kein solcher Pfad mehr gefunden werden kann. Das resultierende Flussnetzwerk stellt das maximale Matching dar.
+
+## Screenshots
+![Logo](preview_1.png)
+Ein Beispielgraph von Studenten und Omas, die durch Kanten miteinander verbunden sind. Der Graph stellt das maximale Matching dar.
+
+![Logo](preview_2.png)
+Nach Klicken auf "Gilbinator starten" wird das maximale Matching-Problem gelöst. Die Matches werden durch grüne Kanten visualisiert.
